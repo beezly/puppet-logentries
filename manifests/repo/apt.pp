@@ -12,8 +12,6 @@ class logentries::repo::apt {
     repos       => 'main',
     key         => 'FA7FA2E59A243096E1B4105DA5270289C43C79AD',
     comment     => 'logentries.com client repo, deployed by puppet module logentries',
-    # FIXME: puppet 2.7 backward compatibility, deprecated
-    include_src => false,
     require     => Apt::Key['FA7FA2E59A243096E1B4105DA5270289C43C79AD'],
     before      => [Package['logentries-daemon'], Package['logentries']],
   }
