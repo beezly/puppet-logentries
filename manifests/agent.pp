@@ -46,7 +46,7 @@ class logentries::agent {
     }
   } else {
     exec { '/usr/bin/le register':
-      command => "/usr/bin/le register ${use_server_config_arg}${datahub_config_arg} --account-key=${logentries::params::account_key}${agent_key_config_arg}",
+      command => "/usr/bin/le register ${use_server_config_arg}${datahub_config_arg} --account-key=${logentries::params::account_key}",
       creates => '/etc/le/config',
       require => Package['logentries-daemon'],
     }
